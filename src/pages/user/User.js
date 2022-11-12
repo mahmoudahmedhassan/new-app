@@ -12,7 +12,7 @@ function User() {
     return (
         <div>
             <div>
-                <OverLay tableUsersData={userData}/> 
+                <OverLay tableUsersData={userData} /> 
             </div>
             <div style={{ paddingTop: '200px', marginBottom: '30px', textAlign: 'center' }}>
                 <form className={classes.form}>

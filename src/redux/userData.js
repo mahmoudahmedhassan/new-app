@@ -10,13 +10,10 @@ const userDataSlice = createSlice({
     reducers: {
         userDataAction: (state, action) => {
             console.log('action.payload',action.payload)
-            state.userData.push(action.payload);
-            // state.userData= action.payload;
+             state.userData= action.payload;
         },
     }
 });
 
-export const {
-    userDataAction
-} = userDataSlice.actions;
+export const {userDataAction} = userDataSlice.actions;
 export default userDataSlice.reducer;
