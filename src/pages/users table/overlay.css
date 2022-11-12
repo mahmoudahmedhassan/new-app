@@ -1,0 +1,44 @@
+.overlay{
+    width: 100%;
+    background-image: url("../../components/assets/overlay.jpg"),linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));;
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+
+  }
+  .contant {
+   
+    max-width: 300px;
+    background: #fff;
+    margin: auto;
+    text-align: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    position: absolute;
+    width: 300px;
+    top: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 3%);
+    border-radius: 15px;
+  }
+  .info{
+      color: #000
+  }
+  .info span{
+    font-weight: bold;
+    margin-inline-start: 10px;
+
+  }
+  .info-description{
+    display:flex;
+    justify-content:flex-end;
+    margin: 5px;
+  }
+  .info-description-adrs{
+    display:flex;
+    justify-content:center;
+    margin: 5px;
+
+  }
