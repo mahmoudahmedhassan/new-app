@@ -15,16 +15,16 @@ function OverLay({ tableUsersData, loading }) {
                     {loading ? <div className='text-center'>loading...</div> : (
                         <div className='info'>
                             <div className='info-description-adrs'>
-                                <p>{firstObject?.nameF}</p>   <span>:المركز</span>
+                                <p>{firstObject? firstObject?.nameF: "مركز 2"}</p>   <span>:المركز</span>
                             </div>
                             <div className='info-description'>
-                                <p>{firstObject?.dName}</p>   <span>:{firstObject?.dGrd}</span>
+                            <p>{firstObject? firstObject?.dName : "عطوه عبد الستار"}</p>   <span>:{firstObject ? firstObject?.dGrd : "استاذ"}</span>
                             </div>
                             <div className='info-description'>
-                                <p>{firstObject?.phone}</p>   <span>:تلفون</span>
+                                <p>{firstObject? firstObject?.phone : "01111111111"}</p>   <span>:تلفون</span>
                             </div>
                             <div className='info-description'>
-                                <p>{firstObject?.adrs}</p>   <span>:العنوان</span>
+                                <p>{firstObject ? firstObject?.adrs : "عنوان مركز 2 مركز 2 مركز 12 مركز 2"}</p>   <span>:العنوان</span>
                             </div>
 
                         </div>

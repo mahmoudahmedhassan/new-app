@@ -2,7 +2,7 @@ import { Table } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsersTableData } from '../../redux/tableUsersData';
-import userDataAction from '../../redux/userData'
+import userDataAction from '../../redux/userData';
 import OverLay from './OverLay';
 import { useNavigate } from "react-router-dom";
 
@@ -26,7 +26,7 @@ function Users() {
     return (
         <div>
             <OverLay tableUsersData={tableUsersData} loading={loading} error={error} />
-            <div style={{ paddingTop: '200px' }}>
+            <div style={{ paddingTop: '200px',marginBottom:"20px" }}>
                 {loading ? <div className="text-center">loading...</div> : (
                     <table id="customers">
                         {/* <tr>
