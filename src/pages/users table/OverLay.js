@@ -11,7 +11,7 @@ function OverLay({ tableUsersData, loading }) {
             <div className='overlay'>
                 <div className='contant'>
                     <div>
-                        <img src={avataaars} alt="profile" height='130px' />
+                        <img src={firstObject ? `data:image/jpeg;base64,${firstObject?.img}` : `data:image/jpeg;base64,${tableUsersData?.img}` } alt="profile" height='130px' />
                     </div>
                     {loading ? <div className='text-center'>loading...</div> : (
                         <div className='info'>
