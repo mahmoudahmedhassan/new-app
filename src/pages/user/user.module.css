@@ -1,0 +1,9 @@
+.form{
+    width: 500px;
+    margin: auto;
+}
+.form_input_felid{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
