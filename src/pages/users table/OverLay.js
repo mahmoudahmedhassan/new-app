@@ -13,19 +13,19 @@ function OverLay({ tableUsersData, loading }) {
                     <div>
                         <img src={firstObject ? `data:image/jpeg;base64,${firstObject?.img}` : `data:image/jpeg;base64,${tableUsersData?.img}` } alt="profile" height='130px' />
                     </div>
-                    {loading ? <div className='text-center'>loading...</div> : (
+                    {loading ? <div className='text-center'>تحميل ...</div> : (
                         <div className='info'>
                             <div className='info-description-adrs'>
-                                <p>{firstObject? firstObject?.nameF: tableUsersData.nameF}</p>   <span>:المركز</span>
+                                <span> المركز :</span> <p>{firstObject? firstObject?.nameF: tableUsersData.nameF}</p>  
                             </div>
                             <div className='info-description'>
-                            <p>{firstObject? firstObject?.dName : tableUsersData.dName}</p>   <span>:{firstObject ? firstObject?.dGrd :tableUsersData.dGrd}</span>
+                            <span>{firstObject ? firstObject?.dGrd :tableUsersData.dGrd} :</span> <p>{firstObject? firstObject?.dName : tableUsersData.dName}</p>   
                             </div>
                             <div className='info-description'>
-                                <p>{firstObject? firstObject?.phone : tableUsersData.phone}</p>   <span>:تلفون</span>
+                            <span> تلفون :</span> <p>{firstObject? firstObject?.phone : tableUsersData.phone}</p>
                             </div>
                             <div className='info-description'>
-                                <p>{firstObject ? firstObject?.adrs : tableUsersData.adrs}</p>   <span>:العنوان</span>
+                            <span>العنوان :</span>   <p>{firstObject ? firstObject?.adrs : tableUsersData.adrs}</p>  
                             </div>
 
                         </div>

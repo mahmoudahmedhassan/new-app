@@ -22,8 +22,8 @@ export default function AccountMenu() {
 
   const { users } = useSelector(state => state.login);
 
-  // const { dirction } = useSelector(state => state.dirction);
-  // console.log(dirction)
+  const { dirction } = useSelector(state => state.switchDrictionSlice);
+  console.log(dirction)
 
   const logOut = () => {
     localStorage.clear();
@@ -41,7 +41,7 @@ export default function AccountMenu() {
     setAnchorEl(null);
   };
   return (
-    <React.Fragment>
+    <React.Fragment >
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
         <Tooltip title="Account settings">
           <IconButton
@@ -57,7 +57,9 @@ export default function AccountMenu() {
           </IconButton>
         </Tooltip>
       </Box>
-      <Menu
+      <Menu 
+      className='hey'
+ 
         anchorEl={anchorEl}
         id="account-menu"
         open={open}
@@ -66,7 +68,7 @@ export default function AccountMenu() {
         PaperProps={{
           elevation: 0,
           sx: {
-            // direction: 'rtl',
+            direction: 'rtl',
             overflow: 'visible',
             filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
             mt: 1.5,
@@ -94,7 +96,7 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar />Profile
+          <Avatar /><span style={{marginRight:"10px"}}>Profile</span> 
         </MenuItem>
         {/* <MenuItem>
           <Avatar /><span>{t("My account")}</span>

@@ -7,3 +7,6 @@
   /* font-family: 'Otomanopee One', sans-serif; */
   font-size: 14px;
  }
+ .rtlDir{
+    direction:rtl;
+  }

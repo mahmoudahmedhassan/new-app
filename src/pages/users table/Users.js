@@ -27,7 +27,7 @@ function Users() {
         <div>
             <OverLay tableUsersData={tableUsersData} loading={loading} error={error} />
             <div style={{ paddingTop: '200px',marginBottom:"20px" }}>
-                {loading ? <div className="text-center">loading...</div> : (
+                {loading ? <div className='text-center'>تحميل ...</div>: (
                     <table id="customers">
                         {/* <tr>
                             <th>...</th>

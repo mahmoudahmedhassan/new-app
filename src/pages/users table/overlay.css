@@ -33,7 +33,7 @@
   }
   .info-description{
     display:flex;
-    justify-content:flex-end;
+    justify-content:flex-start;
     margin: 5px;
   }
   .info-description-adrs{

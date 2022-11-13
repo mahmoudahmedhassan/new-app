@@ -25,6 +25,9 @@
     color: rgb(64,78,103);
     font-size: 1.2rem;
 }
+.lang img{
+  cursor: pointer;
+}
 
 
 /* dropmenu */

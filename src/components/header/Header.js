@@ -1,20 +1,20 @@
 import React, { useState } from 'react'
 import classes from './header.module.css';
 import AccountMenu from '../../components/profile menu/ProfileMenu'
- 
-// import egy from '../../assets/egypt.png'
-// import unitedstates from '../../components/assets/united-states.png'
 
- import { FaBars } from "react-icons/fa";
- 
-// import i18n from 'i18next';
+import egy from '../../components/assets/egypt.png'
+import unitedstates from '../../components/assets/united-states.png'
 
-// import { useTranslation } from 'react-i18next';
+import { FaBars } from "react-icons/fa";
+
+import i18n from 'i18next';
+
+import { useTranslation } from 'react-i18next';
 
 import { useProSidebar } from 'react-pro-sidebar';
 // redux
 import { useDispatch } from 'react-redux'
-// import { toggleSwitchAr, toggleSwitchEn } from '../../redux/toggledirction'
+import { toggleSwitchAr, toggleSwitchEn } from '../../redux/toggledirction'
 import { switerSidebar } from '../../redux/switchSidebar'
 
 import { useNavigate } from "react-router-dom";
@@ -24,7 +24,7 @@ function Header() {
 
     const dispatch = useDispatch();
 
-    // const [t, i18n] = useTranslation();
+    const [t, i18n] = useTranslation();
 
     const [openSidebar, setOpenSidebar] = useState(true);
     const { collapseSidebar } = useProSidebar();
@@ -44,7 +44,7 @@ function Header() {
 
 
             <div className={classes.user} >
-                {/* <div className={classes.lang}>
+            <div className={classes.lang}>
                     {
                         i18n.language === 'ar' ? (
                             <img src={unitedstates}
@@ -67,7 +67,8 @@ function Header() {
                         )
                     }
 
-                </div> */}
+                </div>
+
                 <div className={classes.UserDropdown}>{UserDropdown}</div>
             </div>
             <div className={classes.menubar}>

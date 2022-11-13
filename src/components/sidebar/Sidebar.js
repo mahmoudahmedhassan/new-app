@@ -4,12 +4,16 @@ import { FaUser, FaRegSun } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
 import { RiDashboardFill, RiPagesFill } from "react-icons/ri";
 import logo from '../../components/assets/Sg.ico'
+import { useSelector } from 'react-redux'
 
 import { NavLink } from "react-router-dom";
 import "./sidebar.css";
 
 function SidebarMenu() {
-
+  const { rtl } = useProSidebar();
+  // let lng = localStorage.getItem("xx-l");
+  const { dirction } = useSelector(state => state.switchDrictionSlice);
+  const dir = dirction && rtl;
   return (
     <div className="sidebar" style={{ display: 'flex', minHeight: '100vh', }}>
 
@@ -21,9 +25,9 @@ function SidebarMenu() {
         <Menu>
           <p className="logo"> <img src={logo} alt='logo' height='50px' /> </p>
 
-          <MenuItem icon={<RiDashboardFill />}>
+          {/* <MenuItem icon={<RiDashboardFill />}>
             <NavLink to='./'><span style={{ color: '#fff' }}>Home</span> </NavLink>
-          </MenuItem>
+          </MenuItem> */}
 
           <MenuItem icon={<RiDashboardFill />}>
             <NavLink to='./users'><span style={{ color: '#fff' }}>Users</span> </NavLink>
