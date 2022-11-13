@@ -19,7 +19,7 @@ function User() {
             </div>
             <button onClick={()=>navigate('/users')} title='رجوع' className={classes.back}><TfiBackRight style={{fontSize: '24px'}}/></button>
 
-            <div style={{ paddingTop: '200px', marginBottom: '30px', textAlign: 'center' }}>
+            <div style={{ paddingTop: '125px', marginBottom: '30px', textAlign: 'center' }}>
                 <form className={classes.form}>
                     <div className={classes.form_input_felid}>
                     <Form.Control

@@ -17,3 +17,15 @@
     border-radius: 11px;
     margin: 10px;
 }
+
+@media only screen and (max-width: 500px) {
+
+    .form{
+        width: 200px;
+        margin: auto;
+    }
+    .back{
+        display: none;
+    }
+  
+  }

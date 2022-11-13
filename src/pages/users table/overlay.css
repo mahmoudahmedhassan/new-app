@@ -23,6 +23,10 @@
     transform: translate(-50%, 3%);
     border-radius: 15px;
   }
+  .contant img{
+    height:100px;
+
+  }
   .info{
       color: #000
   }
@@ -42,3 +46,18 @@
     margin: 5px;
 
   }
+
+   
+@media only screen and (max-width: 500px) {
+
+  .contant{
+    width: 200px;
+  }
+  .contant img{
+    height:70px;
+  }
+  .info{
+    font-size:12px !important
+}
+
+}
