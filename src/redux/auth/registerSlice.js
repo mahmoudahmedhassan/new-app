@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 // import { toast } from 'react-toastify';
 // import axios from 'axios';
 
-const URL = "https://tstauth.smartgate-egypt.com/auth/token";
+const URL = "https://tstauth.smartgate-egypt.com/Auth/register";
 
 // fetching
 export const insertUserData = createAsyncThunk("user/insertUserData",
@@ -11,7 +11,7 @@ export const insertUserData = createAsyncThunk("user/insertUserData",
     const { rejectWithValue, getState } = thunkAPI;
     try {
  
-      const res = await fetch(URL, {
+       await fetch(URL, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'
@@ -20,17 +20,9 @@ export const insertUserData = createAsyncThunk("user/insertUserData",
         mode: 'cors'
 
       })
-      console.log(res)
-      const data = await res.json();
-      localStorage.setItem(
-        "current-user",
-        JSON.stringify(data)
-      );
-      localStorage.setItem(
-        "access-token",
-        JSON.stringify(data.token)
-      );
-       return data
+      // console.log(res)
+      // const data = await res.json();
+      //  return data
     } catch (e) {
       return rejectWithValue(e.message);
     }
@@ -38,14 +30,12 @@ export const insertUserData = createAsyncThunk("user/insertUserData",
 )
 
 const initialState = {
-  users:  localStorage.getItem("current-user")
-  ? JSON.parse(localStorage.getItem("current-user"))
-  : {},
+  users:{},
   loading: null,
   error: null
 }
 
-export const userSlice = createSlice({
+export const userRegisterSlice = createSlice({
   name: 'user',
   initialState,
   extraReducers: {
@@ -59,7 +49,6 @@ export const userSlice = createSlice({
       console.log(action.payload);
       state.users = action.payload;
       state.loading = false;
-
     },
     [insertUserData.rejected]: (state, action) => {
       state.error = action.payload;
@@ -69,4 +58,10 @@ export const userSlice = createSlice({
 
 })
 
-export default userSlice.reducer;
+export default userRegisterSlice.reducer;
+
+
+
+
+
+

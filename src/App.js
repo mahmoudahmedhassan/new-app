@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import PrivateRoute from './pages/PrivateRoute.js';
 import Users from './pages/users table/Users.js';
 import User from './pages/user/User.js';
+import Registration from './pages/auth/Register/Register.js';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
         <Routes>
           <Route path="/loginUser" exact element={<LoginUser />} />
+          <Route path="/registration" exact element={<Registration/>}/>
           <Route path="*" element={<NotFound />} />
           <Route element={<PrivateRoute />}>
             <Route element={<Root />}>
