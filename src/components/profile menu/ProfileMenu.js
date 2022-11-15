@@ -14,11 +14,11 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import { useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 export default function AccountMenu() {
   const navigate = useNavigate();
-  // const [t, i18n] = useTranslation();
+  const [t,] = useTranslation();
 
   const { users } = useSelector(state => state.login);
 
@@ -96,7 +96,7 @@ export default function AccountMenu() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar /><span style={{marginRight:"10px"}}>Profile</span> 
+          <Avatar /><span style={{marginRight:"10px"}}>{t("Profile")}</span> 
         </MenuItem>
         {/* <MenuItem>
           <Avatar /><span>{t("My account")}</span>
@@ -106,16 +106,15 @@ export default function AccountMenu() {
           <ListItemIcon>
             <PersonAdd fontSize="small" />
           </ListItemIcon>
-          Add another account
+        { t('Add another account')}
         </MenuItem>
  
          <MenuItem onClick={logOut}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          {/* {t("Logout")} */}
-          Logout
-        </MenuItem>
+          {t("Logout")}
+         </MenuItem>
       </Menu>
     </React.Fragment>
   );

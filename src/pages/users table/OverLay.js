@@ -1,7 +1,5 @@
 import React from 'react';
 import './overlay.css';
-import avataaars from '../../components/assets/avataaars.png'
-
 function OverLay({ tableUsersData, loading }) {
     console.log('tableUsersData',tableUsersData)
     let firstObject =tableUsersData&& tableUsersData[0];

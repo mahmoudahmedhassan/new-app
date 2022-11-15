@@ -6,11 +6,12 @@ import Button from 'react-bootstrap/Button';
 import { useSelector } from 'react-redux';
 import { TfiBackRight } from "react-icons/tfi";
 import { useNavigate } from "react-router-dom";
-
+import { useTranslation } from 'react-i18next';
 function User() {
     const { userData } = useSelector(state => state.userDataSlice);
     console.log(userData)
     const navigate = useNavigate();
+    const [t] = useTranslation();
 
     return (
         <div>
@@ -24,9 +25,9 @@ function User() {
                     <div className={classes.form_input_felid}>
                     <Form.Control
                           type="text"
-                          placeholder="post"
+                          placeholder={t('post')}
                     />
-                     <Button variant="success">post</Button> 
+                     <Button variant="success">{t('post')}</Button> 
                     </div>
                 </form>
             </div>
