@@ -1,0 +1,12 @@
+.table{
+    margin: 20px;
+}
+.table_container{
+    width: 80vw;
+    height:100vh
+}
+.table_container img{
+    width: 100%;
+    height: 100%;
+}
+ 

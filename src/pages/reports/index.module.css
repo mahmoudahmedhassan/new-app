@@ -1,0 +1,11 @@
+.reports{
+    margin: 20px;
+}
+.reports_container{
+    width: 80vw;
+    height:100vh
+}
+.reports_container img{
+    width: 100%;
+    height: 100%;
+}

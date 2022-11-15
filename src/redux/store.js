@@ -4,7 +4,9 @@ import switcherSidebarSlice from './switchSidebar'
 import tapleDataSlice from './tableUsersData';
 import userDataSlice from './userData';
 import switchDrictionSlice from './toggledirction';
-import userRegisterSlice from './auth/registerSlice'
+import userRegisterSlice from './auth/registerSlice';
+import tablesSlice from './tables/tables';
+import reportsSlice from './reports/reports'
 export  const store = configureStore({
   reducer: {
     login ,
@@ -12,6 +14,8 @@ export  const store = configureStore({
     switcherSidebarSlice,
     tapleDataSlice,
     userDataSlice,
-    switchDrictionSlice
+    switchDrictionSlice,
+    tablesSlice,
+    reportsSlice
   },
 })

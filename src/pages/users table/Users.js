@@ -2,6 +2,8 @@ import { Table } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsersTableData } from '../../redux/tableUsersData';
+import {fetchTables } from '../../redux/tables/tables'
+import {fetchReports } from '../../redux/reports/reports'
 import {userDataAction} from '../../redux/userData';
 import OverLay from './OverLay';
 import { useNavigate } from "react-router-dom";
@@ -19,7 +21,10 @@ function Users() {
     }, [dispatch])
 
     const handleClick = (data) => {
-         dispatch(userDataAction(data))
+        console.log(data.sd)
+        dispatch(userDataAction(data)) 
+        dispatch(fetchTables(data.sd))
+        dispatch(fetchReports(data.sd))
         navigate('/user');
      }
 

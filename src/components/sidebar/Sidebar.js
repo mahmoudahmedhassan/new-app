@@ -35,15 +35,14 @@ function SidebarMenu() {
           <MenuItem icon={<RiDashboardFill />}>
             <NavLink to='./users'><span style={{ color: '#fff' }}>{t("Users")}</span> </NavLink>
           </MenuItem>
- 
-          <SubMenu icon={<FaRegSun />} label="Maps">
-            <MenuItem> {t("Tables")} </MenuItem>
-            <MenuItem> {t("Reports")}</MenuItem>
-          </SubMenu>
-          <SubMenu icon={<BiLogOut />} label="Theme">
-            <MenuItem> Dark </MenuItem>
-            <MenuItem> Light </MenuItem>
-          </SubMenu>
+          <MenuItem icon={<RiDashboardFill />}>
+            <NavLink to='./tables'><span style={{ color: '#fff' }}>{t("Tables")}</span> </NavLink>
+          </MenuItem>
+          <MenuItem icon={<RiDashboardFill />}>
+            <NavLink to='./reports'><span style={{ color: '#fff' }}>{t("Reports")}</span> </NavLink>
+          </MenuItem>
+  
+     
         </Menu>
       </Sidebar>
 
