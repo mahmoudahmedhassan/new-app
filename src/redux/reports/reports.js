@@ -15,6 +15,8 @@ export const fetchReports =createAsyncThunk(
         },
       });
        const data = await res.json();
+       if(data)
+       localStorage.setItem("reports",JSON.stringify(data));
 
       return data;
     } catch (error) {
@@ -25,7 +27,8 @@ export const fetchReports =createAsyncThunk(
  
 const reportsSlice =createSlice({
     name: 'reports',
-    initialState: { reports: [], loading: false, error: null },
+    initialState: { reports:  localStorage.getItem("reports") ? JSON.parse(localStorage.getItem("reports")) : [],
+     loading: false, error: null },
     extraReducers: {
         //fetch
         [fetchReports.pending]: (state,) => {

@@ -16,7 +16,8 @@ export const fetchTables = createAsyncThunk(
                 },
             });
             const data = await res.json();
-            // localStorage.setItem("table",JSON.stringify(data));
+            if(data)
+             localStorage.setItem("tables",JSON.stringify(data));
 
             return data;
         } catch (error) {
@@ -28,10 +29,7 @@ export const fetchTables = createAsyncThunk(
 const tablesSlice = createSlice({
     name: 'tables',
     initialState: {
-        tables: 
-        // localStorage.getItem("table")
-        // ? JSON.parse(localStorage.getItem("table")):
-         [],
+        tables: localStorage.getItem("tables") ? JSON.parse(localStorage.getItem("tables")) : [],
             loading: false,
             error: null
     },
@@ -44,8 +42,7 @@ const tablesSlice = createSlice({
             [fetchTables.fulfilled]: (state, action) => {
                 state.tables = action.payload;
                 state.loading = false;
-                // localStorage.setItem("table", JSON.stringify(state.table));
-
+ 
             },
             [fetchTables.rejected]: (state, action) => {
                 state.error = action.payload;
