@@ -11,25 +11,30 @@ import { useNavigate } from "react-router-dom";
 import { FaUserAlt ,FaPhone,FaRegAddressCard} from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
+import Lang from '../../../components/lang/Lang';
+import { useTranslation } from 'react-i18next';
 
 function Registration() {
   const {loading, error } = useSelector(state => state.userRegisterSlice)
+  const [t, i18n] = useTranslation();
+
+  const { dirction } = useSelector(state => state.switchDrictionSlice);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const validate = Yup.object({
-    UserName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
-    firstName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
-    lastName: Yup.string().max(15, 'Must be 15 characters or less').required('Required'),
-    Phone: Yup.string().max(11, 'Must be 11 numbers ').required('Required'),
-    Password: Yup.string().required(),
-    Email: Yup.string().email('Email is invalid').required('Email is required'),
-    Id: Yup.string().max(15, 'Must be 15 numbers ').required('Required'),
+    UserName: Yup.string().max(15, `${t('Must be 15 characters or less')}`).required(`${t('Required')}`),
+    firstName: Yup.string().max(15,  `${t('Must be 15 characters or less')}`).required(`${t('Required')}`),
+    lastName: Yup.string().max(15,  `${t('Must be 15 characters or less')}`).required(`${t('Required')}`),
+    // Phone: Yup.string().max(11, 'Must be 11 numbers ').required('Required'),
+    Password: Yup.string().required(`${t('Password is a required field')}`),
+    Email: Yup.string().email( `${t('Email is invalid')}`).required( `${t('Email is required')}`),
+    // Id: Yup.string().max(15, 'Must be 15 numbers ').required('Required'),
   })
 
   return (
-    <div>
+    <div className={dirction=== 'ar'? 'userDetails ar_dirction ' :" userDetails"}>
       <div className='userDetails'>
         <Container className='main_container'>
           <Row>
@@ -44,13 +49,13 @@ function Registration() {
                       <span>S</span>mart <span>G</span>ate
                     </div>
                     <div className='login_lang'>
-                      <img src={unitedFlag} alt={unitedFlag} height="30px" />
+                     <Lang/>
                     </div>
 
                   </div>
 
                   <div className='platform-title text-center'>
-                    <h1>Hello!</h1>
+                  <h1>  {t("Hello!")}</h1>        
                   </div>
 
                 </div>
@@ -72,7 +77,7 @@ function Registration() {
                   console.log(values)
                   dispatch(insertUserData(values))
                   resetForm({ values: '' });
-                  // navigate('./loginUser')
+                  navigate('/loginUser')
                 }}
                 >
                   {(formik) => (
@@ -81,16 +86,16 @@ function Registration() {
                       <Form >
                         <Row>
                           <Col sm={12}>
-                            <TextField name="UserName" type="text" placeholder="UserName" icon={<FaUserAlt/>} />
+                            <TextField name="UserName" type="text" placeholder={t("UserName")} icon={<FaUserAlt/>} />
                           </Col>
                           <Col sm={12}>
-                            <TextField name="firstName" type="text" placeholder="firstName" icon={<FaUserAlt/>} />
+                            <TextField name="firstName" type="text" placeholder={t("FirstName")}icon={<FaUserAlt/>} />
                           </Col>
                           <Col sm={12}>
-                            <TextField name="lastName" type="text" placeholder="lastName" icon={<FaUserAlt/>} />
+                            <TextField name="lastName" type="text" placeholder={t("LastName")} icon={<FaUserAlt/>} />
                           </Col>
                           <Col sm={12}>
-                            <TextField name="Email" type="email" placeholder="Email" icon={<MdAlternateEmail/>} />
+                            <TextField name="Email" type="email" placeholder={t("Email")} icon={<MdAlternateEmail/>} />
                           </Col>
                           
                           {/* <Col sm={12}>
@@ -100,7 +105,7 @@ function Registration() {
                             <TextField name="Id" type="number" placeholder="Card Number" icon={<FaRegAddressCard/>}/>
                           </Col> */}
                           <Col sm={12}>
-                            <TextField name="Password" type="Password" placeholder="Password" icon={<RiLockPasswordLine/>} />
+                            <TextField name="Password" type="Password" placeholder={t("Password")} icon={<RiLockPasswordLine/>} />
                           </Col> 
                         </Row>
                         {/* <div>{error && <p style={{ color: 'red' }}> {error} </p>}</div> */}
@@ -109,10 +114,11 @@ function Registration() {
                           <button className="btn btn-dark mt-3"
                             type="submit"
                             style={{ width: '100%', background: '#4B77BE', border: 'none' }}>
-                            {/* {loading ? 'Loading...' : 'Registration'}     */} Registration
+                            {/* {loading ? 'Loading...' : 'Registration'}     */}{ t("Registration")}
                           </button>
                         </div>
                       </Form>
+                      <div>{t("if you have account ?")} <span className='go_registration' onClick={()=> navigate("/LoginUser")}>{t("go to login")}</span></div>
 
                     </div>
                   )}
@@ -123,14 +129,14 @@ function Registration() {
 
                   <div className="support my-5">
                     <p className="text-center">
-                      for technical support call us on
+                    {t("for technical support call us on")}{' '}
                       <a className="text-center" href="/">
                         samrt@gate.com
                       </a>
                     </p>
                   </div>
                   <div className='footer-footer'>
-                    <p>All Rights Reserved by Smart Gate admin. Designed and Developed by</p>
+                  <p>{t("All Rights Reserved by Smart Gate admin. Designed and Developed by")}</p>{' '}
                     <a href="/" style={{ color: '#095ffc' }}> Smart Gate</a>
                   </div>
                 </footer>

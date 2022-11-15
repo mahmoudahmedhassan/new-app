@@ -8,9 +8,12 @@ import { useSelector } from 'react-redux'
 
 import { NavLink } from "react-router-dom";
 import "./sidebar.css";
+import { useTranslation } from 'react-i18next';
 
 function SidebarMenu() {
   const { rtl } = useProSidebar();
+  const [t] = useTranslation();
+
   // let lng = localStorage.getItem("xx-l");
   const { dirction } = useSelector(state => state.switchDrictionSlice);
   const dir = dirction && rtl;
@@ -30,12 +33,12 @@ function SidebarMenu() {
           </MenuItem> */}
 
           <MenuItem icon={<RiDashboardFill />}>
-            <NavLink to='./users'><span style={{ color: '#fff' }}>Users</span> </NavLink>
+            <NavLink to='./users'><span style={{ color: '#fff' }}>{t("Users")}</span> </NavLink>
           </MenuItem>
  
           <SubMenu icon={<FaRegSun />} label="Maps">
-            <MenuItem> Google maps</MenuItem>
-            <MenuItem> Open street maps</MenuItem>
+            <MenuItem> {t("Tables")} </MenuItem>
+            <MenuItem> {t("Reports")}</MenuItem>
           </SubMenu>
           <SubMenu icon={<BiLogOut />} label="Theme">
             <MenuItem> Dark </MenuItem>

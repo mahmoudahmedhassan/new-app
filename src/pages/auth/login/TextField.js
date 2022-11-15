@@ -11,7 +11,7 @@ export const TextField = ({ label, ...props }) => {
   return (
     <div className="mb-2">
       <InputGroup className="mb-3">
-        <InputGroup.Text id="basic-addon1">
+        <InputGroup.Text id="basic-addon1" dir="rtl">
           {props.icon}
         </InputGroup.Text>
 

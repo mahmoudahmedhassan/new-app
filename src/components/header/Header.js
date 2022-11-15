@@ -44,7 +44,7 @@ function Header() {
 
 
             <div className={classes.user} >
-            <div className={classes.lang}>
+                <div className={classes.lang}>
                     {
                         i18n.language === 'ar' ? (
                             <img src={unitedstates}
@@ -55,7 +55,7 @@ function Header() {
                                     dispatch(toggleSwitchAr('en'))
                                 }}
                             />
-                         ) : (
+                        ) : (
                             <img src={egy}
                                 alt='en'
                                 height="30px"
